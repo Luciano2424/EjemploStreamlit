@@ -22,6 +22,13 @@ with st.sidebar:
     
     # Muestra el valor actual del slider en la barra lateral.
     st.write("Bins=", div)
+    
+with st.selectbox:
+    color_barras = st.selectbox('Color de las barras', ['red', 'blue', 'green', 'yellow'])
+
+    ax[0].hist(df["Age"], bins=div, color=color_barras)
+    ax[1].bar(["Masculino", "Femenino"], [cant_male, cant_female], color=color_barras)
+
 
 # Desplegamos un histograma con los datos del eje X
 fig, ax = plt.subplots(1, 2, figsize=(10, 3))
